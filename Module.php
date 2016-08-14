@@ -50,8 +50,8 @@ class Module
 
         $classes = array_merge(get_declared_interfaces(), get_declared_classes());
         foreach ($classes as $class) {
-            // Skip non-Zend classes
-            if (0 !== strpos($class, 'Zend')) {
+            // Skip non-Zend and Interop classes
+            if (0 !== strpos($class, 'Zend') && 0 !== strpos($class, 'Interop')) {
                 continue;
             }
 
